@@ -10,6 +10,7 @@ Yarn uses the same registry as NPM but has some nice add ons, like caching packa
 
 ##### Expo SDK + app
 Next, you will need to install Expo on your mobile device. 
+Expo website is here https://expo.io/ but you can find the app in the Play Store or App Store.
 Expo is a app + service that will build your React Native app for you and supports slick features like Hot Reloading. You don't even need the Android SDK or Xcode!
 
 
