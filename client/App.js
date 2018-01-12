@@ -1,6 +1,8 @@
 import React from 'react'
 import axios from 'axios'
-import { ROOT_URL } from './config'
+// import { ROOT_URL } from './config'
+import { local_url } from './config';
+
 import { StyleSheet, Text, View, Button } from 'react-native'
 
 export default class App extends React.Component {
@@ -16,8 +18,9 @@ export default class App extends React.Component {
   async fetchDataFromServer () {
     try {
       // EC2 Instance
-      const response = await axios.get(`${ROOT_URL}/api/values`) 
-      this.setState({ serverData: response.data }) 
+      // const response = await axios.get(`${ROOT_URL}/api/values`) 
+      const response = await axios.get(`${local_url}/api/values`); 
+      this.setState({ serverData: response.data });
     } catch (ex) {
       this.setState({ serverData: 'error...' })
     }
@@ -31,7 +34,7 @@ export default class App extends React.Component {
           onPress={this.fetchDataFromServer}
           title={'Fetch'}
         />
-        <Text>Server Data: {this.state.serverData}</Text>
+        <Text>Serve Data: {this.state.serverData}</Text>
       </View>
     );
   }
